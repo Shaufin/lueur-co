@@ -8,569 +8,140 @@
   <meta name="author" content="Lueur Co." />
   <title>Lueur Co. | Skincare for the Tropical Glow</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --cream: #FAF7F2;
-      --ivory: #F2EDE4;
-      --gold: #C9A96E;
-      --gold-light: #E8D5B0;
-      --charcoal: #2C2C2C;
-      --mid: #6B6358;
-      --soft: #9C9088;
-      --white: #FFFFFF;
+      --cream: #FAF7F2; --ivory: #F2EDE4; --gold: #C9A96E; --gold-light: #E8D5B0;
+      --charcoal: #2C2C2C; --mid: #6B6358; --soft: #9C9088; --white: #FFFFFF;
     }
-
     html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); font-size: 16px; line-height: 1.7; }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
-      color: var(--charcoal);
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    /* NAV */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 5%;
-      height: 72px;
-      background: rgba(250, 247, 242, 0.92);
-      backdrop-filter: blur(8px);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 72px;
+      background: rgba(250,247,242,0.92); backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--gold-light);
     }
-
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 300;
-      letter-spacing: 0.12em;
-      color: var(--charcoal);
-      text-decoration: none;
-    }
-
-    .nav-logo span { color: var(--gold); }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.8rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--mid);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--gold); }
+    .nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:300; letter-spacing:0.12em; color:var(--charcoal); text-decoration:none; }
+    .nav-logo span { color:var(--gold); }
+    .nav-links { display:flex; gap:2.5rem; list-style:none; }
+    .nav-links a { font-size:0.8rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--mid); text-decoration:none; transition:color 0.2s; }
+    .nav-links a:hover { color:var(--gold); }
 
     /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 72px;
-    }
+    .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 72px; }
+    .hero-text { display:flex; flex-direction:column; justify-content:center; padding: 6% 5% 6% 8%; }
+    .hero-eyebrow { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:1.5rem; }
+    .hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,5vw,5.5rem); font-weight:300; line-height:1.08; color:var(--charcoal); margin-bottom:1.8rem; }
+    .hero-title em { font-style:italic; color:var(--gold); }
+    .hero-sub { font-size:0.95rem; color:var(--mid); max-width:420px; margin-bottom:2.8rem; line-height:1.8; }
+    .btn-primary { display:inline-block; background:var(--charcoal); color:var(--cream); padding:0.9rem 2.4rem; font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; text-decoration:none; transition:background 0.25s,color 0.25s; align-self:flex-start; }
+    .btn-primary:hover { background:var(--gold); color:var(--white); }
+    .btn-outline { display:inline-block; border:1px solid var(--charcoal); color:var(--charcoal); padding:0.9rem 2.4rem; font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; text-decoration:none; transition:background 0.25s,color 0.25s; }
+    .btn-outline:hover { background:var(--charcoal); color:var(--cream); }
 
-    .hero-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 6% 5% 6% 8%;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 5vw, 5.5rem);
-      font-weight: 300;
-      line-height: 1.08;
-      color: var(--charcoal);
-      margin-bottom: 1.8rem;
-    }
-
-    .hero-title em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
-    .hero-sub {
-      font-size: 0.95rem;
-      color: var(--mid);
-      max-width: 420px;
-      margin-bottom: 2.8rem;
-      line-height: 1.8;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: var(--charcoal);
-      color: var(--cream);
-      padding: 0.9rem 2.4rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background 0.25s, color 0.25s;
-      align-self: flex-start;
-    }
-
-    .btn-primary:hover {
-      background: var(--gold);
-      color: var(--white);
-    }
-
-    .btn-outline {
-      display: inline-block;
-      border: 1px solid var(--charcoal);
-      color: var(--charcoal);
-      padding: 0.9rem 2.4rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background 0.25s, color 0.25s;
-    }
-
-    .btn-outline:hover {
-      background: var(--charcoal);
-      color: var(--cream);
-    }
-
-    .hero-visual {
-      background: var(--ivory);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-visual-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .hero-circle {
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      background: linear-gradient(145deg, var(--gold-light), var(--ivory));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 30px 80px rgba(201,169,110,0.25);
-    }
-
-    .hero-circle-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-style: italic;
-      color: var(--mid);
-      text-align: center;
-      line-height: 1.6;
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    .hero-stat {
-      text-align: center;
-    }
-
-    .hero-stat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 300;
-      color: var(--gold);
-      display: block;
-    }
-
-    .hero-stat-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--soft);
-    }
+    /* HERO PHOTO */
+    .hero-visual { position:relative; overflow:hidden; min-height:600px; }
+    .hero-photo { width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }
+    .hero-photo-overlay { position:absolute; inset:0; background:linear-gradient(to right, rgba(242,237,228,0.18), rgba(242,237,228,0.05)); }
+    .hero-stats { position:absolute; bottom:2.5rem; left:2.5rem; display:flex; gap:2rem; background:rgba(250,247,242,0.88); backdrop-filter:blur(6px); padding:1.2rem 1.8rem; }
+    .hero-stat-num { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:300; color:var(--gold); display:block; }
+    .hero-stat-label { font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--soft); }
 
     /* MARQUEE */
-    .marquee-wrap {
-      background: var(--charcoal);
-      padding: 1rem 0;
-      overflow: hidden;
-    }
+    .marquee-wrap { background:var(--charcoal); padding:1rem 0; overflow:hidden; }
+    .marquee-track { display:flex; gap:3rem; animation:marquee 22s linear infinite; white-space:nowrap; }
+    .marquee-track span { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-light); }
+    .marquee-track .dot { color:var(--gold); }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-    .marquee-track {
-      display: flex;
-      gap: 3rem;
-      animation: marquee 20s linear infinite;
-      white-space: nowrap;
-    }
-
-    .marquee-track span {
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-    }
-
-    .marquee-track .dot {
-      color: var(--gold);
-    }
-
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    /* SECTION SHARED */
-    section { padding: 7rem 8%; }
-
-    .section-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 3.2rem);
-      font-weight: 300;
-      line-height: 1.15;
-      color: var(--charcoal);
-      margin-bottom: 1.2rem;
-    }
-
-    .section-body {
-      font-size: 0.95rem;
-      color: var(--mid);
-      max-width: 560px;
-      line-height: 1.85;
-    }
+    /* SECTIONS */
+    section { padding:7rem 8%; }
+    .section-eyebrow { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; }
+    .section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3.5vw,3.2rem); font-weight:300; line-height:1.15; color:var(--charcoal); margin-bottom:1.2rem; }
+    .section-body { font-size:0.95rem; color:var(--mid); max-width:560px; line-height:1.85; }
 
     /* ABOUT */
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-    }
-
-    .about-visual {
-      background: var(--ivory);
-      height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .about-visual-card {
-      background: var(--white);
-      padding: 2.5rem;
-      max-width: 280px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.06);
-    }
-
-    .about-visual-card p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-style: italic;
-      color: var(--mid);
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-
-    .about-visual-card small {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .about-accent {
-      position: absolute;
-      bottom: 2rem;
-      right: 2rem;
-      width: 80px;
-      height: 80px;
-      border: 1px solid var(--gold-light);
-      border-radius: 50%;
-    }
-
-    .about-text { display: flex; flex-direction: column; gap: 1.5rem; }
-
-    .about-pillars {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-      margin-top: 1rem;
-    }
-
-    .pillar {
-      padding: 1.2rem;
-      border: 1px solid var(--gold-light);
-      background: var(--white);
-    }
-
-    .pillar-title {
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.4rem;
-    }
-
-    .pillar p {
-      font-size: 0.85rem;
-      color: var(--mid);
-      line-height: 1.6;
-    }
+    .about { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+    .about-photo-wrap { position:relative; height:520px; overflow:hidden; }
+    .about-photo { width:100%; height:100%; object-fit:cover; }
+    .about-photo-card { position:absolute; bottom:2rem; right:-1.5rem; background:var(--white); padding:1.8rem 2rem; max-width:230px; box-shadow:0 20px 50px rgba(0,0,0,0.1); }
+    .about-photo-card p { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-style:italic; color:var(--mid); line-height:1.6; margin-bottom:0.7rem; }
+    .about-photo-card small { font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); }
+    .about-text { display:flex; flex-direction:column; gap:1.5rem; }
+    .about-pillars { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1rem; }
+    .pillar { padding:1.2rem; border:1px solid var(--gold-light); background:var(--white); }
+    .pillar-title { font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); margin-bottom:0.4rem; }
+    .pillar p { font-size:0.85rem; color:var(--mid); line-height:1.6; }
 
     /* FEATURED PRODUCTS */
-    .featured { background: var(--ivory); }
+    .featured { background:var(--ivory); }
+    .featured-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3.5rem; }
+    .products-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .product-card { background:var(--white); overflow:hidden; transition:transform 0.3s,box-shadow 0.3s; text-decoration:none; color:inherit; display:block; }
+    .product-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,0.1); }
+    .product-img { height:260px; overflow:hidden; position:relative; }
+    .product-img img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease; }
+    .product-card:hover .product-img img { transform:scale(1.05); }
+    .product-info { padding:1.5rem; }
+    .product-category { font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:0.4rem; }
+    .product-name { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; color:var(--charcoal); margin-bottom:0.5rem; }
+    .product-desc { font-size:0.83rem; color:var(--soft); line-height:1.6; margin-bottom:1rem; }
+    .product-price { font-size:0.88rem; color:var(--charcoal); font-weight:500; }
 
-    .featured-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 3.5rem;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .product-card {
-      background: var(--white);
-      overflow: hidden;
-      transition: transform 0.3s;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-
-    .product-card:hover { transform: translateY(-6px); }
-
-    .product-img {
-      height: 260px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
-      font-style: italic;
-      color: var(--gold);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .product-img-1 { background: linear-gradient(135deg, #F5EFE6, #EDE0CC); }
-    .product-img-2 { background: linear-gradient(135deg, #EAF0ED, #D4E4DA); }
-    .product-img-3 { background: linear-gradient(135deg, #EEE8F5, #DDD3ED); }
-
-    .product-info { padding: 1.5rem; }
-
-    .product-category {
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.4rem;
-    }
-
-    .product-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 400;
-      color: var(--charcoal);
-      margin-bottom: 0.5rem;
-    }
-
-    .product-desc {
-      font-size: 0.83rem;
-      color: var(--soft);
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-
-    .product-price {
-      font-size: 0.88rem;
-      color: var(--charcoal);
-      font-weight: 500;
-    }
+    /* GLOW BANNER */
+    .glow-banner { position:relative; height:480px; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+    .glow-banner-photo { width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }
+    .glow-banner-overlay { position:absolute; inset:0; background:rgba(44,44,44,0.52); }
+    .glow-banner-content { position:relative; z-index:2; text-align:center; max-width:600px; padding:2rem; }
+    .glow-banner-content h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,4vw,4rem); font-weight:300; color:var(--cream); line-height:1.15; margin-bottom:1.5rem; }
+    .glow-banner-content h2 em { color:var(--gold); font-style:italic; }
+    .btn-gold { display:inline-block; background:var(--gold); color:var(--white); padding:1rem 2.6rem; font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; text-decoration:none; transition:background 0.25s; }
+    .btn-gold:hover { background:var(--gold-light); color:var(--charcoal); }
 
     /* VALUES */
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      margin-top: 3.5rem;
-    }
+    .values-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; margin-top:3.5rem; }
+    .value-item { text-align:center; padding:2rem 1rem; }
+    .value-icon { width:56px; height:56px; border:1px solid var(--gold-light); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.2rem; font-size:1.4rem; }
+    .value-title { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--charcoal); margin-bottom:0.5rem; }
+    .value-body { font-size:0.82rem; color:var(--soft); line-height:1.65; }
 
-    .value-item { text-align: center; padding: 2rem 1rem; }
-
-    .value-icon {
-      width: 56px;
-      height: 56px;
-      border: 1px solid var(--gold-light);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.2rem;
-      font-size: 1.4rem;
-    }
-
-    .value-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: var(--charcoal);
-      margin-bottom: 0.5rem;
-    }
-
-    .value-body {
-      font-size: 0.82rem;
-      color: var(--soft);
-      line-height: 1.65;
-    }
+    /* TESTIMONIAL STRIP */
+    .testimonial-strip { background:var(--charcoal); padding:5rem 8%; }
+    .testimonial-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:3rem; }
+    .testimonial-card { border-top:1px solid rgba(201,169,110,0.4); padding-top:1.8rem; }
+    .testimonial-photo-row { display:flex; align-items:center; gap:1rem; margin-bottom:1.2rem; }
+    .testimonial-avatar { width:48px; height:48px; border-radius:50%; object-fit:cover; border:2px solid var(--gold); }
+    .testimonial-name { font-size:0.82rem; color:var(--cream); font-weight:500; }
+    .testimonial-loc { font-size:0.72rem; color:var(--soft); }
+    .testimonial-stars { color:var(--gold); font-size:0.85rem; margin-bottom:0.8rem; }
+    .testimonial-text { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-style:italic; color:rgba(250,247,242,0.75); line-height:1.7; }
 
     /* CTA BANNER */
-    .cta-banner {
-      background: var(--charcoal);
-      padding: 6rem 8%;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 3rem;
-    }
-
-    .cta-banner h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3vw, 3rem);
-      font-weight: 300;
-      color: var(--cream);
-      line-height: 1.2;
-    }
-
-    .cta-banner h2 em { color: var(--gold); font-style: italic; }
-
-    .btn-gold {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--white);
-      padding: 1rem 2.6rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: background 0.25s;
-    }
-
-    .btn-gold:hover { background: var(--gold-light); color: var(--charcoal); }
+    .cta-banner { background:var(--charcoal); padding:6rem 8%; display:grid; grid-template-columns:1fr auto; align-items:center; gap:3rem; }
+    .cta-banner h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3vw,3rem); font-weight:300; color:var(--cream); line-height:1.2; }
+    .cta-banner h2 em { color:var(--gold); font-style:italic; }
 
     /* FOOTER */
-    footer {
-      background: var(--ivory);
-      padding: 4rem 8% 2rem;
-      border-top: 1px solid var(--gold-light);
-    }
-
-    .footer-top {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 4rem;
-      margin-bottom: 3rem;
-    }
-
-    .footer-brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      color: var(--charcoal);
-      margin-bottom: 1rem;
-    }
-
-    .footer-brand span { color: var(--gold); }
-
-    .footer-tagline {
-      font-size: 0.85rem;
-      color: var(--soft);
-      line-height: 1.7;
-      max-width: 280px;
-    }
-
-    .footer-col h4 {
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--charcoal);
-      margin-bottom: 1.2rem;
-    }
-
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-
-    .footer-col ul a {
-      font-size: 0.85rem;
-      color: var(--soft);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-col ul a:hover { color: var(--gold); }
-
-    .footer-bottom {
-      border-top: 1px solid var(--gold-light);
-      padding-top: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-copy {
-      font-size: 0.75rem;
-      color: var(--soft);
-    }
-
-    .disclaimer {
-      font-size: 0.72rem;
-      color: var(--soft);
-      font-style: italic;
-    }
+    footer { background:var(--ivory); padding:4rem 8% 2rem; border-top:1px solid var(--gold-light); }
+    .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr; gap:4rem; margin-bottom:3rem; }
+    .footer-brand { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; letter-spacing:0.1em; color:var(--charcoal); margin-bottom:1rem; }
+    .footer-brand span { color:var(--gold); }
+    .footer-tagline { font-size:0.85rem; color:var(--soft); line-height:1.7; max-width:280px; }
+    .footer-col h4 { font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--charcoal); margin-bottom:1.2rem; }
+    .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:0.6rem; }
+    .footer-col ul a { font-size:0.85rem; color:var(--soft); text-decoration:none; transition:color 0.2s; }
+    .footer-col ul a:hover { color:var(--gold); }
+    .footer-bottom { border-top:1px solid var(--gold-light); padding-top:1.5rem; display:flex; justify-content:space-between; align-items:center; }
+    .footer-copy { font-size:0.75rem; color:var(--soft); }
+    .disclaimer { font-size:0.72rem; color:var(--soft); font-style:italic; }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a href="index.html" class="nav-logo">Lueur <span>Co.</span></a>
     <ul class="nav-links">
@@ -582,36 +153,31 @@
   </nav>
 
   <!-- HERO -->
-  <section class="hero" style="padding: 0;">
+  <section class="hero" style="padding:0;">
     <div class="hero-text">
-      <p class="hero-eyebrow">Skincare for Singapore's Climate</p>
-      <h1 class="hero-title">Skin that <em>glows</em><br>in the heat.</h1>
-      <p class="hero-sub">Lueur Co. crafts lightweight, active skincare designed specifically for humid, tropical climates. No heaviness. No breakouts. Just a soft, lasting radiance that works with your skin — not against it.</p>
-      <div style="display:flex;gap:1rem;">
+      <p class="hero-eyebrow reveal">Skincare for Singapore's Climate</p>
+      <h1 class="hero-title reveal reveal-delay-1">Skin that <em>glows</em><br>in the heat.</h1>
+      <p class="hero-sub reveal reveal-delay-2">Lueur Co. crafts lightweight, active skincare designed specifically for humid, tropical climates. No heaviness. No breakouts. Just a soft, lasting radiance that works with your skin — not against it.</p>
+      <div class="reveal reveal-delay-3" style="display:flex;gap:1rem;">
         <a href="products.html" class="btn-primary">Shop Products</a>
         <a href="#about" class="btn-outline">Our Story</a>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-visual-inner">
-        <div class="hero-circle">
-          <div class="hero-circle-text">
-            Formulated<br>for<br><em style="font-size:1.3rem">tropical skin</em>
-          </div>
+      <img class="hero-photo" src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=900&q=80&fit=crop" alt="Woman with glowing skin applying skincare" />
+      <div class="hero-photo-overlay"></div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num">100%</span>
+          <span class="hero-stat-label">Cruelty-free</span>
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <span class="hero-stat-num">100%</span>
-            <span class="hero-stat-label">Cruelty-free</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-num">5k+</span>
-            <span class="hero-stat-label">Happy skin</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-num">SG</span>
-            <span class="hero-stat-label">Based</span>
-          </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">5k+</span>
+          <span class="hero-stat-label">Happy skin</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">SG</span>
+          <span class="hero-stat-label">Based</span>
         </div>
       </div>
     </div>
@@ -638,19 +204,19 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="about">
-      <div class="about-visual">
-        <div class="about-visual-card">
+      <div class="about-photo-wrap reveal">
+        <img class="about-photo" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80&fit=crop" alt="Skincare routine close up" />
+        <div class="about-photo-card">
           <p>"Skincare shouldn't fight your climate. It should understand it."</p>
           <small>— Lueur Co. Founding Principle</small>
         </div>
-        <div class="about-accent"></div>
       </div>
       <div class="about-text">
-        <p class="section-eyebrow">About Lueur Co.</p>
-        <h2 class="section-title">Born in Singapore.<br>Built for humidity.</h2>
-        <p class="section-body">Most skincare is formulated for temperate climates — dry winters and mild summers. Singapore is different. High heat, constant humidity, and UV exposure year-round demand a different kind of formula.</p>
-        <p class="section-body">Lueur Co. was built from the ground up with Singapore's climate in mind. Every ingredient, texture, and formulation is tested here, for skin like yours.</p>
-        <div class="about-pillars">
+        <p class="section-eyebrow reveal">About Lueur Co.</p>
+        <h2 class="section-title reveal">Born in Singapore.<br>Built for humidity.</h2>
+        <p class="section-body reveal">Most skincare is formulated for temperate climates — dry winters and mild summers. Singapore is different. High heat, constant humidity, and UV exposure year-round demand a different kind of formula.</p>
+        <p class="section-body reveal">Lueur Co. was built from the ground up with Singapore's climate in mind. Every ingredient, texture, and formulation is tested here, for skin like yours.</p>
+        <div class="about-pillars reveal">
           <div class="pillar">
             <p class="pillar-title">Climate-smart</p>
             <p>Formulated for 30°C+ humidity environments year-round.</p>
@@ -674,7 +240,7 @@
 
   <!-- FEATURED PRODUCTS -->
   <section class="featured">
-    <div class="featured-header">
+    <div class="featured-header reveal">
       <div>
         <p class="section-eyebrow">Featured Products</p>
         <h2 class="section-title">Your glow routine,<br>simplified.</h2>
@@ -682,8 +248,10 @@
       <a href="products.html" class="btn-outline">View All Products</a>
     </div>
     <div class="products-grid">
-      <a href="serum.html" class="product-card">
-        <div class="product-img product-img-1">✦</div>
+      <a href="serum.html" class="product-card reveal">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&q=80&fit=crop" alt="Vitamin C brightening serum" />
+        </div>
         <div class="product-info">
           <p class="product-category">Serum</p>
           <h3 class="product-name">Glow Essence Serum</h3>
@@ -691,8 +259,10 @@
           <span class="product-price">SGD $48</span>
         </div>
       </a>
-      <a href="products.html" class="product-card">
-        <div class="product-img product-img-2">❧</div>
+      <a href="products.html" class="product-card reveal reveal-delay-1">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&q=80&fit=crop" alt="Lightweight moisturiser for humid weather" />
+        </div>
         <div class="product-info">
           <p class="product-category">Moisturiser</p>
           <h3 class="product-name">Dew Veil Moisturiser</h3>
@@ -700,8 +270,10 @@
           <span class="product-price">SGD $42</span>
         </div>
       </a>
-      <a href="products.html" class="product-card">
-        <div class="product-img product-img-3">◈</div>
+      <a href="products.html" class="product-card reveal reveal-delay-2">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&q=80&fit=crop" alt="Gentle low pH cleanser" />
+        </div>
         <div class="product-info">
           <p class="product-category">Cleanser</p>
           <h3 class="product-name">Soft Reset Cleanser</h3>
@@ -712,29 +284,39 @@
     </div>
   </section>
 
+  <!-- GLOW PHOTO BANNER -->
+  <div class="glow-banner">
+    <img class="glow-banner-photo" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1400&q=80&fit=crop" alt="Woman with glowing healthy skin" />
+    <div class="glow-banner-overlay"></div>
+    <div class="glow-banner-content reveal">
+      <h2>Your skin deserves<br>to <em>glow</em> every day.</h2>
+      <a href="serum.html" class="btn-gold">Shop the Serum</a>
+    </div>
+  </div>
+
   <!-- VALUES -->
   <section>
-    <div style="text-align:center;max-width:560px;margin:0 auto 0;">
+    <div style="text-align:center;max-width:560px;margin:0 auto;" class="reveal">
       <p class="section-eyebrow">Why Lueur Co.</p>
       <h2 class="section-title">What we stand for</h2>
     </div>
     <div class="values-grid">
-      <div class="value-item">
+      <div class="value-item reveal">
         <div class="value-icon">🌿</div>
         <h3 class="value-title">Clean Formulas</h3>
         <p class="value-body">No parabens, sulfates or artificial fragrances. Ingredients your skin can actually trust.</p>
       </div>
-      <div class="value-item">
+      <div class="value-item reveal reveal-delay-1">
         <div class="value-icon">☀️</div>
         <h3 class="value-title">Tropical-Tested</h3>
         <p class="value-body">Every product tested in Singapore's heat and humidity — not a lab in a temperate country.</p>
       </div>
-      <div class="value-item">
+      <div class="value-item reveal reveal-delay-2">
         <div class="value-icon">🔬</div>
         <h3 class="value-title">Science-Backed</h3>
         <p class="value-body">Active ingredients at clinically effective concentrations, not trace amounts for marketing.</p>
       </div>
-      <div class="value-item">
+      <div class="value-item reveal reveal-delay-3">
         <div class="value-icon">♻️</div>
         <h3 class="value-title">Sustainable</h3>
         <p class="value-body">Recyclable packaging and refillable options across our core product range.</p>
@@ -742,13 +324,49 @@
     </div>
   </section>
 
-  <!-- CTA BANNER -->
-  <div class="cta-banner">
-    <h2>Ready to find your <em>glow</em>?<br>Start with our bestselling serum.</h2>
-    <a href="serum.html" class="btn-gold">Shop the Serum</a>
-  </div>
+  <!-- TESTIMONIALS -->
+  <section class="testimonial-strip">
+    <div style="text-align:center;" class="reveal">
+      <p class="section-eyebrow" style="color:var(--gold);">Real Reviews</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,3rem);font-weight:300;color:var(--cream);line-height:1.2;">What Singapore customers say</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-photo-row">
+          <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80&fit=crop&crop=face" alt="Customer Priya" />
+          <div>
+            <p class="testimonial-name">Priya M.</p>
+            <p class="testimonial-loc">Verified Buyer · Singapore</p>
+          </div>
+        </div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Finally a serum that doesn't pill under sunscreen in our weather. Skin tone has visibly evened out in 6 weeks."</p>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-photo-row">
+          <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80&fit=crop&crop=face" alt="Customer Cheryl" />
+          <div>
+            <p class="testimonial-name">Cheryl T.</p>
+            <p class="testimonial-loc">Verified Buyer · Singapore</p>
+          </div>
+        </div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Vitamin C serums always felt sticky in humidity — this one is genuinely different. It just disappears into skin."</p>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-photo-row">
+          <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80&fit=crop&crop=face" alt="Customer Marcus" />
+          <div>
+            <p class="testimonial-name">Marcus L.</p>
+            <p class="testimonial-loc">Verified Buyer · Singapore</p>
+          </div>
+        </div>
+        <div class="testimonial-stars">★★★★☆</div>
+        <p class="testimonial-text">"The niacinamide combo really helps with my oily T-zone. Noticed a visible glow after about 3 weeks of use."</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-top">
       <div>
@@ -780,5 +398,6 @@
     </div>
   </footer>
 
+  <script src="shared.js"></script>
 </body>
 </html>

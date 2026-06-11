@@ -3,627 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Lueur Co. Glow Essence Serum — a lightweight Vitamin C and Niacinamide brightening serum formulated for Singapore's humid tropical climate. Shop now." />
-  <meta name="keywords" content="vitamin C serum Singapore, brightening serum humid weather, glow serum Singapore, best serum for tropical skin, niacinamide serum Singapore, lightweight serum Singapore, Lueur Co glow serum" />
+  <meta name="description" content="Lueur Co. Glow Essence Serum — a lightweight Vitamin C and Niacinamide brightening serum formulated for Singapore's humid tropical climate." />
+  <meta name="keywords" content="vitamin C serum Singapore, brightening serum humid weather, glow serum Singapore, best serum tropical skin, niacinamide serum Singapore, lightweight serum Singapore" />
   <meta name="author" content="Lueur Co." />
   <title>Glow Essence Serum | Lueur Co. — Skincare for the Tropical Glow</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --cream: #FAF7F2;
-      --ivory: #F2EDE4;
-      --gold: #C9A96E;
-      --gold-light: #E8D5B0;
-      --charcoal: #2C2C2C;
-      --mid: #6B6358;
-      --soft: #9C9088;
-      --white: #FFFFFF;
+      --cream: #FAF7F2; --ivory: #F2EDE4; --gold: #C9A96E; --gold-light: #E8D5B0;
+      --charcoal: #2C2C2C; --mid: #6B6358; --soft: #9C9088; --white: #FFFFFF;
     }
-
     html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); font-size: 16px; line-height: 1.7; }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
-      color: var(--charcoal);
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 5%;
-      height: 72px;
-      background: rgba(250, 247, 242, 0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--gold-light);
-    }
-
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 300;
-      letter-spacing: 0.12em;
-      color: var(--charcoal);
-      text-decoration: none;
-    }
-
-    .nav-logo span { color: var(--gold); }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.8rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--mid);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0 5%; height:72px; background:rgba(250,247,242,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--gold-light); }
+    .nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:300; letter-spacing:0.12em; color:var(--charcoal); text-decoration:none; }
+    .nav-logo span { color:var(--gold); }
+    .nav-links { display:flex; gap:2.5rem; list-style:none; }
+    .nav-links a { font-size:0.8rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--mid); text-decoration:none; transition:color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--gold); }
 
     /* PRODUCT HERO */
-    .product-hero {
-      padding-top: 72px;
-      min-height: 90vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
+    .product-hero { padding-top:72px; display:grid; grid-template-columns:1fr 1fr; min-height:90vh; }
+    .product-photo { position:relative; overflow:hidden; min-height:600px; }
+    .product-photo img { width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }
+    .product-photo-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(44,44,44,0.3), transparent 60%); }
+    .product-photo-badge { position:absolute; top:2rem; left:2rem; background:var(--charcoal); color:var(--cream); font-size:0.65rem; letter-spacing:0.14em; text-transform:uppercase; padding:0.5rem 1rem; z-index:2; }
+    .product-photo-caption { position:absolute; bottom:2rem; left:2rem; z-index:2; }
+    .product-photo-caption p { font-size:0.75rem; color:rgba(250,247,242,0.8); letter-spacing:0.1em; text-transform:uppercase; }
 
-    .product-visual {
-      background: linear-gradient(145deg, #F5EFE6, #EDE0CC);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      min-height: 600px;
-    }
+    .product-info { padding:5rem 6% 5rem 5%; display:flex; flex-direction:column; justify-content:center; }
+    .breadcrumb { font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--soft); margin-bottom:2rem; }
+    .breadcrumb a { color:var(--gold); text-decoration:none; }
+    .product-category-tag { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem; }
+    .product-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,3.5vw,3.8rem); font-weight:300; line-height:1.1; color:var(--charcoal); margin-bottom:0.8rem; }
+    .product-title em { font-style:italic; color:var(--gold); }
+    .product-tagline { font-size:1rem; color:var(--mid); margin-bottom:2rem; font-style:italic; font-family:'Cormorant Garamond',serif; }
+    .product-rating { display:flex; align-items:center; gap:0.8rem; margin-bottom:2rem; }
+    .stars { color:var(--gold); font-size:1rem; letter-spacing:0.1em; }
+    .rating-text { font-size:0.8rem; color:var(--soft); }
+    .product-description { font-size:0.93rem; color:var(--mid); line-height:1.85; margin-bottom:2rem; max-width:480px; }
+    .product-details { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:2.5rem; }
+    .detail-item { padding:1rem; background:var(--ivory); border-left:2px solid var(--gold); }
+    .detail-label { font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--soft); margin-bottom:0.3rem; }
+    .detail-value { font-size:0.88rem; color:var(--charcoal); font-weight:500; }
+    .product-price-row { display:flex; align-items:center; gap:1.5rem; margin-bottom:2rem; }
+    .price-main { font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300; color:var(--charcoal); }
+    .price-note { font-size:0.78rem; color:var(--soft); }
+    .btn-primary { display:inline-block; background:var(--charcoal); color:var(--cream); padding:1rem 2.8rem; font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; text-decoration:none; transition:background 0.25s; border:none; cursor:pointer; font-family:'DM Sans',sans-serif; align-self:flex-start; }
+    .btn-primary:hover { background:var(--gold); }
 
-    .product-visual-inner {
-      text-align: center;
-    }
-
-    .product-icon {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 8rem;
-      font-style: italic;
-      color: var(--gold);
-      line-height: 1;
-      display: block;
-      margin-bottom: 1.5rem;
-    }
-
-    .product-visual-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--soft);
-    }
-
-    .product-visual-badge {
-      position: absolute;
-      top: 2rem;
-      left: 2rem;
-      background: var(--charcoal);
-      color: var(--cream);
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 0.5rem 1rem;
-    }
-
-    .product-visual-ring {
-      position: absolute;
-      bottom: 3rem;
-      right: 3rem;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      border: 1px solid var(--gold-light);
-    }
-
-    /* PRODUCT INFO */
-    .product-info {
-      padding: 5rem 6% 5rem 5%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .breadcrumb {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--soft);
-      margin-bottom: 2rem;
-    }
-
-    .breadcrumb a { color: var(--gold); text-decoration: none; }
-
-    .product-category-tag {
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.8rem;
-    }
-
-    .product-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 3.5vw, 3.8rem);
-      font-weight: 300;
-      line-height: 1.1;
-      color: var(--charcoal);
-      margin-bottom: 0.8rem;
-    }
-
-    .product-title em { font-style: italic; color: var(--gold); }
-
-    .product-tagline {
-      font-size: 1rem;
-      color: var(--mid);
-      margin-bottom: 2rem;
-      font-style: italic;
-      font-family: 'Cormorant Garamond', serif;
-    }
-
-    .product-rating {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 2rem;
-    }
-
-    .stars { color: var(--gold); font-size: 1rem; letter-spacing: 0.1em; }
-
-    .rating-text {
-      font-size: 0.8rem;
-      color: var(--soft);
-    }
-
-    .product-description {
-      font-size: 0.93rem;
-      color: var(--mid);
-      line-height: 1.85;
-      margin-bottom: 2rem;
-      max-width: 480px;
-    }
-
-    .product-details {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .detail-item {
-      padding: 1rem;
-      background: var(--ivory);
-      border-left: 2px solid var(--gold);
-    }
-
-    .detail-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--soft);
-      margin-bottom: 0.3rem;
-    }
-
-    .detail-value {
-      font-size: 0.88rem;
-      color: var(--charcoal);
-      font-weight: 500;
-    }
-
-    .product-price-row {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .price-main {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
-      font-weight: 300;
-      color: var(--charcoal);
-    }
-
-    .price-note {
-      font-size: 0.78rem;
-      color: var(--soft);
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: var(--charcoal);
-      color: var(--cream);
-      padding: 1rem 2.8rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background 0.25s;
-      border: none;
-      cursor: pointer;
-      font-family: 'DM Sans', sans-serif;
-      align-self: flex-start;
-    }
-
-    .btn-primary:hover { background: var(--gold); }
+    /* GLOW RESULTS STRIP */
+    .glow-results { display:grid; grid-template-columns:repeat(3,1fr); height:340px; }
+    .glow-result-item { overflow:hidden; position:relative; }
+    .glow-result-item img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s; }
+    .glow-result-item:hover img { transform:scale(1.05); }
+    .glow-result-label { position:absolute; bottom:1.2rem; left:1.2rem; background:rgba(250,247,242,0.88); padding:0.5rem 1rem; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--charcoal); }
 
     /* INGREDIENTS */
-    .ingredients-section {
-      padding: 6rem 8%;
-      background: var(--ivory);
-    }
-
-    .section-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3vw, 3rem);
-      font-weight: 300;
-      color: var(--charcoal);
-      line-height: 1.15;
-      margin-bottom: 3.5rem;
-    }
-
-    .ingredients-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
-
-    .ingredient-list { display: flex; flex-direction: column; gap: 1.2rem; }
-
-    .ingredient-row {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 1.2rem;
-      padding: 1.2rem 1.5rem;
-      background: var(--white);
-      border-bottom: 1px solid var(--gold-light);
-    }
-
-    .ingredient-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-
-    .ingredient-name {
-      font-size: 0.9rem;
-      color: var(--charcoal);
-      font-weight: 500;
-    }
-
-    .ingredient-pct {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      color: var(--gold);
-    }
-
-    .ingredient-benefit {
-      font-size: 0.78rem;
-      color: var(--soft);
-      margin-top: 0.2rem;
-    }
-
-    .how-to-use { display: flex; flex-direction: column; gap: 1.5rem; }
-
-    .how-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 300;
-      color: var(--charcoal);
-      margin-bottom: 0.5rem;
-    }
-
-    .how-step {
-      display: flex;
-      gap: 1.2rem;
-      align-items: flex-start;
-    }
-
-    .how-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      font-weight: 300;
-      color: var(--gold-light);
-      line-height: 1;
-      flex-shrink: 0;
-      width: 2rem;
-    }
-
-    .how-text { font-size: 0.88rem; color: var(--mid); line-height: 1.7; }
-
-    .how-text strong { color: var(--charcoal); font-weight: 500; }
+    .ingredients-section { padding:6rem 8%; background:var(--ivory); }
+    .section-eyebrow { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; }
+    .section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3vw,3rem); font-weight:300; color:var(--charcoal); line-height:1.15; margin-bottom:3.5rem; }
+    .ingredients-layout { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
+    .ingredient-list { display:flex; flex-direction:column; gap:1.2rem; }
+    .ingredient-row { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:1.2rem; padding:1.2rem 1.5rem; background:var(--white); border-bottom:1px solid var(--gold-light); }
+    .ingredient-dot { width:8px; height:8px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+    .ingredient-name { font-size:0.9rem; color:var(--charcoal); font-weight:500; }
+    .ingredient-benefit { font-size:0.78rem; color:var(--soft); margin-top:0.2rem; }
+    .ingredient-pct { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--gold); }
+    .how-to-use { display:flex; flex-direction:column; gap:1.5rem; }
+    .how-title { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:300; color:var(--charcoal); margin-bottom:0.5rem; }
+    .how-step { display:flex; gap:1.2rem; align-items:flex-start; }
+    .how-num { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:300; color:var(--gold-light); line-height:1; flex-shrink:0; width:2rem; }
+    .how-text { font-size:0.88rem; color:var(--mid); line-height:1.7; }
+    .how-text strong { color:var(--charcoal); font-weight:500; }
 
     /* REVIEWS */
-    .reviews-section { padding: 6rem 8%; }
-
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3.5rem;
-    }
-
-    .review-card {
-      background: var(--white);
-      padding: 2rem;
-      border-top: 2px solid var(--gold);
-    }
-
-    .review-stars { color: var(--gold); margin-bottom: 1rem; font-size: 0.9rem; }
-
-    .review-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      font-style: italic;
-      color: var(--mid);
-      line-height: 1.7;
-      margin-bottom: 1.2rem;
-    }
-
-    .review-author {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--soft);
-    }
+    .reviews-section { padding:6rem 8%; }
+    .reviews-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3.5rem; }
+    .review-card { background:var(--white); padding:2rem; border-top:2px solid var(--gold); }
+    .review-avatar { width:44px; height:44px; border-radius:50%; object-fit:cover; border:2px solid var(--gold-light); margin-bottom:1rem; }
+    .review-stars { color:var(--gold); margin-bottom:0.8rem; font-size:0.9rem; }
+    .review-text { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-style:italic; color:var(--mid); line-height:1.7; margin-bottom:1.2rem; }
+    .review-author { font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--soft); }
 
     /* CONTACT */
-    .contact-section {
-      background: var(--charcoal);
-      padding: 6rem 8%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: start;
-    }
-
-    .contact-info h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3vw, 3rem);
-      font-weight: 300;
-      color: var(--cream);
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-info h2 em { color: var(--gold); font-style: italic; }
-
-    .contact-info p {
-      font-size: 0.9rem;
-      color: rgba(250,247,242,0.65);
-      line-height: 1.8;
-      margin-bottom: 2.5rem;
-    }
-
-    .contact-detail {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .contact-row {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-
-    .contact-row-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gold);
-      min-width: 80px;
-      margin-top: 0.1rem;
-    }
-
-    .contact-row-val {
-      font-size: 0.88rem;
-      color: rgba(250,247,242,0.7);
-    }
-
-    /* FORM */
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-
-    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-
-    .form-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(250,247,242,0.5);
-    }
-
-    .form-input, .form-textarea {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(201,169,110,0.3);
-      padding: 0.9rem 1.2rem;
-      font-size: 0.88rem;
-      color: var(--cream);
-      font-family: 'DM Sans', sans-serif;
-      transition: border-color 0.2s;
-      outline: none;
-      width: 100%;
-    }
-
-    .form-input::placeholder, .form-textarea::placeholder {
-      color: rgba(250,247,242,0.25);
-    }
-
-    .form-input:focus, .form-textarea:focus {
-      border-color: var(--gold);
-    }
-
-    .form-textarea { resize: vertical; min-height: 130px; }
-
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-
-    .btn-gold {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--white);
-      padding: 1rem 2.6rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      font-family: 'DM Sans', sans-serif;
-      transition: background 0.25s;
-      align-self: flex-start;
-    }
-
-    .btn-gold:hover { background: var(--gold-light); color: var(--charcoal); }
+    .contact-section { background:var(--charcoal); padding:6rem 8%; display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:start; }
+    .contact-info h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3vw,3rem); font-weight:300; color:var(--cream); line-height:1.2; margin-bottom:1.5rem; }
+    .contact-info h2 em { color:var(--gold); font-style:italic; }
+    .contact-info p { font-size:0.9rem; color:rgba(250,247,242,0.65); line-height:1.8; margin-bottom:2.5rem; }
+    .contact-detail { display:flex; flex-direction:column; gap:1rem; }
+    .contact-row { display:flex; gap:1rem; align-items:flex-start; }
+    .contact-row-label { font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); min-width:80px; margin-top:0.1rem; }
+    .contact-row-val { font-size:0.88rem; color:rgba(250,247,242,0.7); }
+    .contact-form { display:flex; flex-direction:column; gap:1.2rem; }
+    .form-group { display:flex; flex-direction:column; gap:0.4rem; }
+    .form-label { font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(250,247,242,0.5); }
+    .form-input, .form-textarea { background:rgba(255,255,255,0.06); border:1px solid rgba(201,169,110,0.3); padding:0.9rem 1.2rem; font-size:0.88rem; color:var(--cream); font-family:'DM Sans',sans-serif; transition:border-color 0.2s; outline:none; width:100%; }
+    .form-input::placeholder, .form-textarea::placeholder { color:rgba(250,247,242,0.25); }
+    .form-input:focus, .form-textarea:focus { border-color:var(--gold); }
+    .form-textarea { resize:vertical; min-height:130px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+    .btn-gold { display:inline-block; background:var(--gold); color:var(--white); padding:1rem 2.6rem; font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; border:none; cursor:pointer; font-family:'DM Sans',sans-serif; transition:background 0.25s; align-self:flex-start; }
+    .btn-gold:hover { background:var(--gold-light); color:var(--charcoal); }
 
     /* RELATED */
-    .related-section { padding: 6rem 8%; background: var(--ivory); }
+    .related-section { padding:6rem 8%; background:var(--ivory); }
+    .related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
+    .related-card { background:var(--white); text-decoration:none; color:inherit; display:block; transition:transform 0.3s; overflow:hidden; }
+    .related-card:hover { transform:translateY(-5px); }
+    .related-img { height:200px; overflow:hidden; }
+    .related-img img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s; }
+    .related-card:hover .related-img img { transform:scale(1.05); }
+    .related-info { padding:1.2rem 1.5rem; }
+    .related-cat { font-size:0.65rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); margin-bottom:0.3rem; }
+    .related-name { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--charcoal); margin-bottom:0.3rem; }
+    .related-price { font-size:0.82rem; color:var(--soft); }
 
-    .related-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .related-card {
-      background: var(--white);
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      transition: transform 0.3s;
-    }
-
-    .related-card:hover { transform: translateY(-5px); }
-
-    .related-img {
-      height: 180px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      font-style: italic;
-      color: var(--gold);
-    }
-
-    .related-img-1 { background: linear-gradient(135deg, #EAF0ED, #D4E4DA); }
-    .related-img-2 { background: linear-gradient(135deg, #EEE8F5, #DDD3ED); }
-    .related-img-3 { background: linear-gradient(135deg, #F5EDE6, #EDDACC); }
-
-    .related-info { padding: 1.2rem 1.5rem; }
-
-    .related-cat {
-      font-size: 0.65rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.3rem;
-    }
-
-    .related-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      color: var(--charcoal);
-      margin-bottom: 0.3rem;
-    }
-
-    .related-price { font-size: 0.82rem; color: var(--soft); }
-
-    /* FOOTER */
-    footer {
-      background: var(--ivory);
-      padding: 4rem 8% 2rem;
-      border-top: 1px solid var(--gold-light);
-    }
-
-    .footer-top {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 4rem;
-      margin-bottom: 3rem;
-    }
-
-    .footer-brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      color: var(--charcoal);
-      margin-bottom: 1rem;
-    }
-
-    .footer-brand span { color: var(--gold); }
-
-    .footer-tagline {
-      font-size: 0.85rem;
-      color: var(--soft);
-      line-height: 1.7;
-      max-width: 280px;
-    }
-
-    .footer-col h4 {
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--charcoal);
-      margin-bottom: 1.2rem;
-    }
-
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-
-    .footer-col ul a {
-      font-size: 0.85rem;
-      color: var(--soft);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-col ul a:hover { color: var(--gold); }
-
-    .footer-bottom {
-      border-top: 1px solid var(--gold-light);
-      padding-top: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-copy { font-size: 0.75rem; color: var(--soft); }
-    .disclaimer { font-size: 0.72rem; color: var(--soft); font-style: italic; }
+    footer { background:var(--ivory); padding:4rem 8% 2rem; border-top:1px solid var(--gold-light); }
+    .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr; gap:4rem; margin-bottom:3rem; }
+    .footer-brand { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; letter-spacing:0.1em; color:var(--charcoal); margin-bottom:1rem; }
+    .footer-brand span { color:var(--gold); }
+    .footer-tagline { font-size:0.85rem; color:var(--soft); line-height:1.7; max-width:280px; }
+    .footer-col h4 { font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--charcoal); margin-bottom:1.2rem; }
+    .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:0.6rem; }
+    .footer-col ul a { font-size:0.85rem; color:var(--soft); text-decoration:none; transition:color 0.2s; }
+    .footer-col ul a:hover { color:var(--gold); }
+    .footer-bottom { border-top:1px solid var(--gold-light); padding-top:1.5rem; display:flex; justify-content:space-between; align-items:center; }
+    .footer-copy { font-size:0.75rem; color:var(--soft); }
+    .disclaimer { font-size:0.72rem; color:var(--soft); font-style:italic; }
   </style>
 </head>
 <body>
@@ -640,151 +150,99 @@
 
   <!-- PRODUCT HERO -->
   <section class="product-hero">
-    <div class="product-visual">
-      <span class="product-visual-badge">✦ Bestseller</span>
-      <div class="product-visual-inner">
-        <span class="product-icon">✦</span>
-        <p class="product-visual-label">Glow Essence Serum · 30ml</p>
-      </div>
-      <div class="product-visual-ring"></div>
+    <div class="product-photo">
+      <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=900&q=80&fit=crop" alt="Lueur Co. Glow Essence Vitamin C Serum" />
+      <div class="product-photo-overlay"></div>
+      <span class="product-photo-badge">✦ Bestseller</span>
+      <div class="product-photo-caption"><p>Glow Essence Serum · 30ml</p></div>
     </div>
-
     <div class="product-info">
-      <p class="breadcrumb">
-        <a href="index.html">Home</a> &nbsp;/&nbsp;
-        <a href="products.html">Products</a> &nbsp;/&nbsp;
-        Glow Essence Serum
-      </p>
-      <p class="product-category-tag">Serum · Brightening</p>
-      <h1 class="product-title">Glow Essence<br><em>Serum</em></h1>
-      <p class="product-tagline">"Your skin's daily dose of radiance — even in the tropics."</p>
-      <div class="product-rating">
+      <p class="breadcrumb reveal"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="products.html">Products</a> &nbsp;/&nbsp; Glow Essence Serum</p>
+      <p class="product-category-tag reveal">Serum · Brightening</p>
+      <h1 class="product-title reveal">Glow Essence<br><em>Serum</em></h1>
+      <p class="product-tagline reveal">"Your skin's daily dose of radiance — even in the tropics."</p>
+      <div class="product-rating reveal">
         <span class="stars">★★★★★</span>
         <span class="rating-text">4.9 / 5.0 &nbsp;·&nbsp; 312 reviews</span>
       </div>
-      <p class="product-description">
-        A lightweight, fast-absorbing Vitamin C and Niacinamide serum formulated specifically for Singapore's hot, humid climate. Unlike thicker serums that pill or feel heavy, Glow Essence absorbs in seconds — leaving behind only a soft, luminous finish that lasts all day.
-      </p>
-      <div class="product-details">
-        <div class="detail-item">
-          <p class="detail-label">Size</p>
-          <p class="detail-value">30ml</p>
-        </div>
-        <div class="detail-item">
-          <p class="detail-label">Skin Type</p>
-          <p class="detail-value">All skin types</p>
-        </div>
-        <div class="detail-item">
-          <p class="detail-label">Key Actives</p>
-          <p class="detail-value">Vit C · Niacinamide</p>
-        </div>
-        <div class="detail-item">
-          <p class="detail-label">Climate Tested</p>
-          <p class="detail-value">Singapore ✓</p>
-        </div>
+      <p class="product-description reveal">A lightweight, fast-absorbing Vitamin C and Niacinamide serum formulated for Singapore's hot, humid climate. Absorbs in seconds — leaving behind only a soft, luminous finish that lasts all day.</p>
+      <div class="product-details reveal">
+        <div class="detail-item"><p class="detail-label">Size</p><p class="detail-value">30ml</p></div>
+        <div class="detail-item"><p class="detail-label">Skin Type</p><p class="detail-value">All skin types</p></div>
+        <div class="detail-item"><p class="detail-label">Key Actives</p><p class="detail-value">Vit C · Niacinamide</p></div>
+        <div class="detail-item"><p class="detail-label">Climate Tested</p><p class="detail-value">Singapore ✓</p></div>
       </div>
-      <div class="product-price-row">
+      <div class="product-price-row reveal">
         <span class="price-main">SGD $48</span>
         <span class="price-note">Free shipping within Singapore</span>
       </div>
-      <button class="btn-primary">Add to Cart</button>
+      <button class="btn-primary reveal">Add to Cart</button>
     </div>
   </section>
+
+  <!-- GLOW RESULTS PHOTO STRIP -->
+  <div class="glow-results">
+    <div class="glow-result-item">
+      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80&fit=crop" alt="Glowing skin result after using Lueur Co serum" />
+      <span class="glow-result-label">Visibly Brighter</span>
+    </div>
+    <div class="glow-result-item">
+      <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&q=80&fit=crop" alt="Clear even skin tone skincare Singapore" />
+      <span class="glow-result-label">Even Skin Tone</span>
+    </div>
+    <div class="glow-result-item">
+      <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80&fit=crop" alt="Healthy skin after tropical skincare routine" />
+      <span class="glow-result-label">Healthy Barrier</span>
+    </div>
+  </div>
 
   <!-- INGREDIENTS + HOW TO USE -->
   <section class="ingredients-section">
     <div class="ingredients-layout">
-      <div>
+      <div class="reveal">
         <p class="section-eyebrow">What's Inside</p>
         <h2 class="section-title">Key ingredients</h2>
         <div class="ingredient-list">
-          <div class="ingredient-row">
-            <div class="ingredient-dot"></div>
-            <div>
-              <p class="ingredient-name">Vitamin C (Ascorbic Acid)</p>
-              <p class="ingredient-benefit">Brightens uneven tone, antioxidant protection</p>
-            </div>
-            <span class="ingredient-pct">10%</span>
-          </div>
-          <div class="ingredient-row">
-            <div class="ingredient-dot"></div>
-            <div>
-              <p class="ingredient-name">Niacinamide</p>
-              <p class="ingredient-benefit">Reduces pores, controls sebum in humidity</p>
-            </div>
-            <span class="ingredient-pct">5%</span>
-          </div>
-          <div class="ingredient-row">
-            <div class="ingredient-dot"></div>
-            <div>
-              <p class="ingredient-name">Hyaluronic Acid</p>
-              <p class="ingredient-benefit">Draws moisture from humid air into skin</p>
-            </div>
-            <span class="ingredient-pct">2%</span>
-          </div>
-          <div class="ingredient-row">
-            <div class="ingredient-dot"></div>
-            <div>
-              <p class="ingredient-name">Ferulic Acid</p>
-              <p class="ingredient-benefit">Stabilises Vitamin C, boosts efficacy</p>
-            </div>
-            <span class="ingredient-pct">0.5%</span>
-          </div>
-          <div class="ingredient-row">
-            <div class="ingredient-dot"></div>
-            <div>
-              <p class="ingredient-name">Centella Asiatica Extract</p>
-              <p class="ingredient-benefit">Soothes inflammation, reinforces skin barrier</p>
-            </div>
-            <span class="ingredient-pct">3%</span>
-          </div>
+          <div class="ingredient-row"><div class="ingredient-dot"></div><div><p class="ingredient-name">Vitamin C (Ascorbic Acid)</p><p class="ingredient-benefit">Brightens uneven tone, antioxidant protection</p></div><span class="ingredient-pct">10%</span></div>
+          <div class="ingredient-row"><div class="ingredient-dot"></div><div><p class="ingredient-name">Niacinamide</p><p class="ingredient-benefit">Reduces pores, controls sebum in humidity</p></div><span class="ingredient-pct">5%</span></div>
+          <div class="ingredient-row"><div class="ingredient-dot"></div><div><p class="ingredient-name">Hyaluronic Acid</p><p class="ingredient-benefit">Draws moisture from humid air into skin</p></div><span class="ingredient-pct">2%</span></div>
+          <div class="ingredient-row"><div class="ingredient-dot"></div><div><p class="ingredient-name">Ferulic Acid</p><p class="ingredient-benefit">Stabilises Vitamin C, boosts efficacy</p></div><span class="ingredient-pct">0.5%</span></div>
+          <div class="ingredient-row"><div class="ingredient-dot"></div><div><p class="ingredient-name">Centella Asiatica Extract</p><p class="ingredient-benefit">Soothes inflammation, reinforces skin barrier</p></div><span class="ingredient-pct">3%</span></div>
         </div>
       </div>
-      <div class="how-to-use">
+      <div class="how-to-use reveal reveal-delay-2">
         <p class="section-eyebrow">Application</p>
         <h2 class="how-title">How to use</h2>
-        <div class="how-step">
-          <span class="how-num">1</span>
-          <p class="how-text"><strong>Cleanse first.</strong> Apply to freshly cleansed, slightly damp skin. The damp skin helps with absorption and spreads the serum more evenly.</p>
-        </div>
-        <div class="how-step">
-          <span class="how-num">2</span>
-          <p class="how-text"><strong>Use 3–4 drops.</strong> Dispense onto fingertips and gently press into face, neck and décolletage. Do not rub — pat gently.</p>
-        </div>
-        <div class="how-step">
-          <span class="how-num">3</span>
-          <p class="how-text"><strong>Wait 60 seconds.</strong> Let the serum fully absorb before applying moisturiser. In Singapore's humidity, it absorbs quickly.</p>
-        </div>
-        <div class="how-step">
-          <span class="how-num">4</span>
-          <p class="how-text"><strong>Follow with SPF.</strong> Vitamin C is most effective when paired with sun protection. Always apply SPF 50 in the morning after this serum.</p>
-        </div>
-        <div class="how-step">
-          <span class="how-num">5</span>
-          <p class="how-text"><strong>Use AM & PM.</strong> Safe for twice-daily use. Store away from direct sunlight to maintain Vitamin C stability.</p>
-        </div>
+        <div class="how-step"><span class="how-num">1</span><p class="how-text"><strong>Cleanse first.</strong> Apply to freshly cleansed, slightly damp skin for better absorption.</p></div>
+        <div class="how-step"><span class="how-num">2</span><p class="how-text"><strong>Use 3–4 drops.</strong> Press gently into face and neck. Do not rub — pat gently.</p></div>
+        <div class="how-step"><span class="how-num">3</span><p class="how-text"><strong>Wait 60 seconds.</strong> Let the serum fully absorb before applying moisturiser.</p></div>
+        <div class="how-step"><span class="how-num">4</span><p class="how-text"><strong>Follow with SPF.</strong> Always apply SPF 50 in the morning after this serum.</p></div>
+        <div class="how-step"><span class="how-num">5</span><p class="how-text"><strong>Use AM & PM.</strong> Safe for twice-daily use. Store away from direct sunlight.</p></div>
       </div>
     </div>
   </section>
 
   <!-- REVIEWS -->
   <section class="reviews-section">
-    <p class="section-eyebrow">Customer Reviews</p>
-    <h2 class="section-title">What Singapore customers say</h2>
+    <p class="section-eyebrow reveal">Customer Reviews</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,3rem);font-weight:300;color:var(--charcoal);line-height:1.2;" class="reveal">What Singapore customers say</h2>
     <div class="reviews-grid">
-      <div class="review-card">
+      <div class="review-card reveal">
+        <img class="review-avatar" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80&fit=crop&crop=face" alt="Customer Priya" />
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Finally a serum that doesn't pill under sunscreen in our weather. I've been using it for 6 weeks and my skin tone has visibly evened out."</p>
+        <p class="review-text">"Finally a serum that doesn't pill under sunscreen in our weather. My skin tone has visibly evened out after 6 weeks."</p>
         <p class="review-author">Priya M. · Verified Buyer · Singapore</p>
       </div>
-      <div class="review-card">
+      <div class="review-card reveal reveal-delay-1">
+        <img class="review-avatar" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80&fit=crop&crop=face" alt="Customer Cheryl" />
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">"I was skeptical about Vitamin C serums because they always felt sticky in humidity. This one is genuinely different — it just disappears into skin."</p>
+        <p class="review-text">"Vitamin C serums always felt sticky in humidity. This one is genuinely different — it just disappears into skin."</p>
         <p class="review-author">Cheryl T. · Verified Buyer · Singapore</p>
       </div>
-      <div class="review-card">
+      <div class="review-card reveal reveal-delay-2">
+        <img class="review-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80&fit=crop&crop=face" alt="Customer Marcus" />
         <div class="review-stars">★★★★☆</div>
-        <p class="review-text">"Great serum, noticed a visible glow after about 3 weeks. The niacinamide combo really helps with my oily T-zone in Singapore's heat."</p>
+        <p class="review-text">"The niacinamide combo really helps with my oily T-zone in Singapore's heat. Noticeable glow after 3 weeks."</p>
         <p class="review-author">Marcus L. · Verified Buyer · Singapore</p>
       </div>
     </div>
@@ -792,89 +250,46 @@
 
   <!-- CONTACT -->
   <section class="contact-section" id="contact">
-    <div class="contact-info">
+    <div class="contact-info reveal">
       <h2>Get in <em>touch</em><br>with us.</h2>
       <p>Have a question about the Glow Essence Serum, your order, or skincare advice for Singapore's climate? Our team is happy to help.</p>
       <div class="contact-detail">
-        <div class="contact-row">
-          <span class="contact-row-label">Email</span>
-          <span class="contact-row-val">hello@lueurco.sg</span>
-        </div>
-        <div class="contact-row">
-          <span class="contact-row-label">WhatsApp</span>
-          <span class="contact-row-val">+65 9123 4567</span>
-        </div>
-        <div class="contact-row">
-          <span class="contact-row-label">Based in</span>
-          <span class="contact-row-val">Singapore</span>
-        </div>
-        <div class="contact-row">
-          <span class="contact-row-label">Response</span>
-          <span class="contact-row-val">Within 1 business day</span>
-        </div>
-        <div class="contact-row">
-          <span class="contact-row-label">Shipping</span>
-          <span class="contact-row-val">Free delivery across Singapore</span>
-        </div>
+        <div class="contact-row"><span class="contact-row-label">Email</span><span class="contact-row-val">hello@lueurco.sg</span></div>
+        <div class="contact-row"><span class="contact-row-label">WhatsApp</span><span class="contact-row-val">+65 9123 4567</span></div>
+        <div class="contact-row"><span class="contact-row-label">Based in</span><span class="contact-row-val">Singapore</span></div>
+        <div class="contact-row"><span class="contact-row-label">Response</span><span class="contact-row-val">Within 1 business day</span></div>
+        <div class="contact-row"><span class="contact-row-label">Shipping</span><span class="contact-row-val">Free delivery across Singapore</span></div>
       </div>
     </div>
-
-    <form class="contact-form" onsubmit="handleSubmit(event)">
+    <form class="contact-form reveal reveal-delay-2" onsubmit="handleSubmit(event)">
       <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">First Name</label>
-          <input type="text" class="form-input" placeholder="Your first name" required />
-        </div>
-        <div class="form-group">
-          <label class="form-label">Last Name</label>
-          <input type="text" class="form-input" placeholder="Your last name" />
-        </div>
+        <div class="form-group"><label class="form-label">First Name</label><input type="text" class="form-input" placeholder="Your first name" required /></div>
+        <div class="form-group"><label class="form-label">Last Name</label><input type="text" class="form-input" placeholder="Your last name" /></div>
       </div>
-      <div class="form-group">
-        <label class="form-label">Email Address</label>
-        <input type="email" class="form-input" placeholder="your@email.com" required />
-      </div>
-      <div class="form-group">
-        <label class="form-label">Subject</label>
-        <input type="text" class="form-input" placeholder="e.g. Order enquiry, product question..." />
-      </div>
-      <div class="form-group">
-        <label class="form-label">Message</label>
-        <textarea class="form-textarea" placeholder="Tell us how we can help you..."></textarea>
-      </div>
+      <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="your@email.com" required /></div>
+      <div class="form-group"><label class="form-label">Subject</label><input type="text" class="form-input" placeholder="e.g. Order enquiry, product question..." /></div>
+      <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" placeholder="Tell us how we can help you..."></textarea></div>
       <button type="submit" class="btn-gold">Send Message</button>
       <p id="form-success" style="display:none;font-size:0.82rem;color:var(--gold-light);margin-top:0.5rem;">✓ Message sent! We'll get back to you within 1 business day.</p>
     </form>
   </section>
 
-  <!-- RELATED PRODUCTS -->
+  <!-- RELATED -->
   <section class="related-section">
-    <p class="section-eyebrow">Complete Your Routine</p>
-    <h2 class="section-title">Pair it with</h2>
+    <p class="section-eyebrow reveal">Complete Your Routine</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,3rem);font-weight:300;color:var(--charcoal);line-height:1.2;" class="reveal">Pair it with</h2>
     <div class="related-grid">
-      <a href="products.html" class="related-card">
-        <div class="related-img related-img-1">❧</div>
-        <div class="related-info">
-          <p class="related-cat">Moisturiser</p>
-          <h3 class="related-name">Dew Veil Moisturiser</h3>
-          <p class="related-price">SGD $42</p>
-        </div>
+      <a href="products.html" class="related-card reveal">
+        <div class="related-img"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&q=80&fit=crop" alt="Dew Veil Moisturiser" /></div>
+        <div class="related-info"><p class="related-cat">Moisturiser</p><h3 class="related-name">Dew Veil Moisturiser</h3><p class="related-price">SGD $42</p></div>
       </a>
-      <a href="products.html" class="related-card">
-        <div class="related-img related-img-2">✿</div>
-        <div class="related-info">
-          <p class="related-cat">Cleanser</p>
-          <h3 class="related-name">Soft Reset Cleanser</h3>
-          <p class="related-price">SGD $36</p>
-        </div>
+      <a href="products.html" class="related-card reveal reveal-delay-1">
+        <div class="related-img"><img src="https://images.unsplash.com/photo-1601049676869-702ea24cfd58?w=600&q=80&fit=crop" alt="Soft Reset Cleanser" /></div>
+        <div class="related-info"><p class="related-cat">Cleanser</p><h3 class="related-name">Soft Reset Cleanser</h3><p class="related-price">SGD $36</p></div>
       </a>
-      <a href="products.html" class="related-card">
-        <div class="related-img related-img-3">◇</div>
-        <div class="related-info">
-          <p class="related-cat">Serum</p>
-          <h3 class="related-name">Barrier Repair Serum</h3>
-          <p class="related-price">SGD $52</p>
-        </div>
+      <a href="products.html" class="related-card reveal reveal-delay-2">
+        <div class="related-img"><img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&q=80&fit=crop" alt="Barrier Repair Serum" /></div>
+        <div class="related-info"><p class="related-cat">Serum</p><h3 class="related-name">Barrier Repair Serum</h3><p class="related-price">SGD $52</p></div>
       </a>
     </div>
   </section>
@@ -917,6 +332,6 @@
       e.target.reset();
     }
   </script>
-
+  <script src="shared.js"></script>
 </body>
 </html>
