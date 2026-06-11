@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shop Lueur Co.'s full range of lightweight skincare products — serums, moisturisers and cleansers formulated for Singapore's humid tropical climate." />
+  <meta name="keywords" content="skincare products Singapore, lightweight serum Singapore, moisturiser for humid weather, glow skincare Singapore, tropical skincare products, best skincare Singapore, Lueur Co products" />
+  <meta name="author" content="Lueur Co." />
+  <title>Products | Lueur Co. — Skincare for the Tropical Glow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #FAF7F2;
+      --ivory: #F2EDE4;
+      --gold: #C9A96E;
+      --gold-light: #E8D5B0;
+      --charcoal: #2C2C2C;
+      --mid: #6B6358;
+      --soft: #9C9088;
+      --white: #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 72px;
+      background: rgba(250, 247, 242, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--gold-light);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+    /* PAGE HERO */
+    .page-hero {
+      padding-top: 72px;
+      background: var(--ivory);
+      padding-bottom: 0;
+    }
+
+    .page-hero-inner {
+      padding: 5rem 8% 4rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 2rem;
+      border-bottom: 1px solid var(--gold-light);
+    }
+
+    .breadcrumb {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-bottom: 1rem;
+    }
+
+    .breadcrumb a { color: var(--gold); text-decoration: none; }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--charcoal);
+    }
+
+    .page-title em { font-style: italic; color: var(--gold); }
+
+    .page-subtitle {
+      font-size: 0.95rem;
+      color: var(--mid);
+      margin-top: 1rem;
+      max-width: 500px;
+    }
+
+    .product-count {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .product-count small {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-top: 0.3rem;
+    }
+
+    /* FILTER BAR */
+    .filter-bar {
+      padding: 1.5rem 8%;
+      background: var(--ivory);
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      border-bottom: 1px solid var(--gold-light);
+    }
+
+    .filter-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-right: 0.5rem;
+    }
+
+    .filter-btn {
+      padding: 0.45rem 1.2rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--gold-light);
+      background: transparent;
+      color: var(--mid);
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--charcoal);
+      color: var(--cream);
+      border-color: var(--charcoal);
+    }
+
+    /* PRODUCTS SECTION */
+    .products-section { padding: 5rem 8%; }
+
+    .category-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--gold-light);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin-bottom: 5rem;
+    }
+
+    .product-card {
+      background: var(--white);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    }
+
+    .product-img {
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-style: italic;
+      color: var(--gold);
+      position: relative;
+    }
+
+    .product-img-1 { background: linear-gradient(135deg, #F5EFE6, #EDE0CC); }
+    .product-img-2 { background: linear-gradient(135deg, #EAF0ED, #D4E4DA); }
+    .product-img-3 { background: linear-gradient(135deg, #EEE8F5, #DDD3ED); }
+    .product-img-4 { background: linear-gradient(135deg, #F5EDE6, #EDDACC); }
+    .product-img-5 { background: linear-gradient(135deg, #EDF0EA, #D4E4D0); }
+    .product-img-6 { background: linear-gradient(135deg, #F0EEF5, #E0DDED); }
+
+    .product-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--charcoal);
+      color: var(--cream);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+    }
+
+    .product-info { padding: 1.6rem; }
+
+    .product-category {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+
+    .product-desc {
+      font-size: 0.83rem;
+      color: var(--soft);
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .product-price {
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      font-weight: 500;
+    }
+
+    .product-link {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* INGREDIENTS HIGHLIGHT */
+    .ingredients-section {
+      background: var(--charcoal);
+      padding: 6rem 8%;
+    }
+
+    .ingredients-section .section-eyebrow { color: var(--gold); }
+
+    .ingredients-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 3.5rem;
+      line-height: 1.2;
+    }
+
+    .ingredients-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .ingredient-card {
+      border: 1px solid rgba(201,169,110,0.3);
+      padding: 2rem 1.5rem;
+    }
+
+    .ingredient-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .ingredient-desc {
+      font-size: 0.82rem;
+      color: rgba(250,247,242,0.6);
+      line-height: 1.65;
+    }
+
+    /* ROUTINE SECTION */
+    .routine-section { padding: 6rem 8%; background: var(--ivory); }
+
+    .routine-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 3.5rem;
+    }
+
+    .routine-step {
+      padding: 2.5rem 2rem;
+      border-right: 1px solid var(--gold-light);
+      position: relative;
+    }
+
+    .routine-step:last-child { border-right: none; }
+
+    .step-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--charcoal);
+      margin-bottom: 0.6rem;
+    }
+
+    .step-body {
+      font-size: 0.82rem;
+      color: var(--soft);
+      line-height: 1.65;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--ivory);
+      padding: 4rem 8% 2rem;
+      border-top: 1px solid var(--gold-light);
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand span { color: var(--gold); }
+
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: var(--soft);
+      line-height: 1.7;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .footer-col ul a {
+      font-size: 0.85rem;
+      color: var(--soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      border-top: 1px solid var(--gold-light);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy { font-size: 0.75rem; color: var(--soft); }
+    .disclaimer { font-size: 0.72rem; color: var(--soft); font-style: italic; }
+
+    .section-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Lueur <span>Co.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="serum.html">Our Serum</a></li>
+      <li><a href="serum.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div>
+        <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Products</p>
+        <h1 class="page-title">All <em>Products</em></h1>
+        <p class="page-subtitle">Lightweight skincare designed for Singapore's tropical climate. Every formula tested in heat and humidity — so your skin stays balanced, clear, and glowing.</p>
+      </div>
+      <div class="product-count">
+        06
+        <small>Products</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Serums</button>
+    <button class="filter-btn">Moisturisers</button>
+    <button class="filter-btn">Cleansers</button>
+    <button class="filter-btn">Sets</button>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section class="products-section">
+
+    <p class="category-label">Serums — Targeted treatments</p>
+    <div class="products-grid">
+      <a href="serum.html" class="product-card">
+        <div class="product-img product-img-1">
+          ✦
+          <span class="product-badge">Bestseller</span>
+        </div>
+        <div class="product-info">
+          <p class="product-category">Serum</p>
+          <h2 class="product-name">Glow Essence Serum</h2>
+          <p class="product-desc">10% Vitamin C + Niacinamide brightening serum with antioxidant protection. Absorbs instantly in humid conditions without pilling.</p>
+          <div class="product-footer">
+            <span class="product-price">SGD $48</span>
+            <a href="serum.html" class="product-link">View Details →</a>
+          </div>
+        </div>
+      </a>
+      <a href="serum.html" class="product-card">
+        <div class="product-img product-img-4">◇</div>
+        <div class="product-info">
+          <p class="product-category">Serum</p>
+          <h2 class="product-name">Barrier Repair Serum</h2>
+          <p class="product-desc">Ceramide and Centella Asiatica serum that restores and strengthens the skin barrier, ideal after over-exfoliation or sun exposure.</p>
+          <div class="product-footer">
+            <span class="product-price">SGD $52</span>
+            <a href="serum.html" class="product-link">View Details →</a>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <p class="category-label">Moisturisers — Hydration without heaviness</p>
+    <div class="products-grid">
+      <a href="serum.html" class="product-card">
+        <div class="product-img product-img-2">❧</div>
+        <div class="product-info">
+          <p class="product-category">Moisturiser</p>
+          <h2 class="product-name">Dew Veil Moisturiser</h2>
+          <p class="product-desc">Water-gel formula with Hyaluronic Acid and Aloe Vera. Hydrates deeply without leaving any greasy residue in humidity.</p>
+          <div class="product-footer">
+            <span class="product-price">SGD $42</span>
+            <a href="serum.html" class="product-link">View Details →</a>
+          </div>
+        </div>
+      </a>
+      <a href="serum.html" class="product-card">
+        <div class="product-img product-img-5">
+          ◈
+          <span class="product-badge">New</span>
+        </div>
+        <div class="product-info">
+          <p class="product-category">Moisturiser</p>
+          <h2 class="product-name">Calm Cloud Cream</h2>
+          <p class="product-desc">A soothing, breathable cream for sensitive skin. Fragrance-free with Oat Extract and Panthenol to reduce redness and irritation.</p>
+          <div class="product-footer">
+            <span class="product-price">SGD $46</span>
+            <a href="serum.html" class="product-link">View Details →</a>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <p class="category-label">Cleansers — A clean start</p>
+    <div class="products-grid">
+      <a href="serum.html" class="product-card">
+        <div class="product-img product-img-3">✿</div>
+        <div class="product-info">
+          <p class="product-category">Cleanser</p>
+          <h2 class="product-name">Soft Reset Cleanser</h2>
+          <p class="product-desc">Low-pH gel cleanser that removes sweat, sunscreen and urban pollution without disrupting the skin's natural moisture balance.</p>
+          <div class="product-footer">
+            <span class="product-price">SGD $36</span>
+            <a href="serum.html" class="product-link">View Details →</a>
+          </div>
+        </div>
+      </a>
+      <a href="serum.html" class="product-card">
+        <div class="product-img product-img-6">❀</div>
+        <div class="product-info">
+          <p class="product-category">Cleanser</p>
+          <h2 class="product-name">Micellar Melt Oil Cleanser</h2>
+          <p class="product-desc">First-step oil cleanser that dissolves SPF, makeup and sebum on contact. Rinses clean — no greasy residue, even in heat.</p>
+          <div class="product-footer">
+            <span class="product-price">SGD $38</span>
+            <a href="serum.html" class="product-link">View Details →</a>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </section>
+
+  <!-- KEY INGREDIENTS -->
+  <section class="ingredients-section">
+    <p class="section-eyebrow">What's Inside</p>
+    <h2>Key ingredients we stand by</h2>
+    <div class="ingredients-grid">
+      <div class="ingredient-card">
+        <h3 class="ingredient-name">Vitamin C</h3>
+        <p class="ingredient-desc">A powerful antioxidant that brightens uneven skin tone and protects against UV-induced free radical damage — essential in Singapore's year-round sun.</p>
+      </div>
+      <div class="ingredient-card">
+        <h3 class="ingredient-name">Niacinamide</h3>
+        <p class="ingredient-desc">Regulates sebum production, minimises pores, and reduces hyperpigmentation. Works especially well in humidity-prone environments.</p>
+      </div>
+      <div class="ingredient-card">
+        <h3 class="ingredient-name">Hyaluronic Acid</h3>
+        <p class="ingredient-desc">Draws moisture from the air into skin cells. Lightweight and non-occlusive — ideal for layering in tropical climates without feeling heavy.</p>
+      </div>
+      <div class="ingredient-card">
+        <h3 class="ingredient-name">Centella Asiatica</h3>
+        <p class="ingredient-desc">A calming botanical that reduces inflammation, speeds up healing, and reinforces the skin barrier — popular in Korean skincare for good reason.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROUTINE -->
+  <section class="routine-section">
+    <p class="section-eyebrow">Build Your Routine</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,3rem);font-weight:300;color:var(--charcoal);line-height:1.2;">The Lueur Co. daily routine</h2>
+    <div class="routine-steps">
+      <div class="routine-step">
+        <div class="step-number">01</div>
+        <h3 class="step-title">Cleanse</h3>
+        <p class="step-body">Start with Soft Reset Cleanser to remove sweat and buildup from Singapore's humid air. AM & PM.</p>
+      </div>
+      <div class="routine-step">
+        <div class="step-number">02</div>
+        <h3 class="step-title">Treat</h3>
+        <p class="step-body">Apply Glow Essence Serum on damp skin. Pat gently — don't rub. Let it absorb fully before the next step.</p>
+      </div>
+      <div class="routine-step">
+        <div class="step-number">03</div>
+        <h3 class="step-title">Moisturise</h3>
+        <p class="step-body">Seal in hydration with Dew Veil Moisturiser. The water-gel texture won't feel heavy even in 30°C humidity.</p>
+      </div>
+      <div class="routine-step">
+        <div class="step-number">04</div>
+        <h3 class="step-title">Protect</h3>
+        <p class="step-body">Finish your morning routine with SPF 50. Singapore's UV index is one of the highest in the world — never skip this step.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Lueur <span>Co.</span></div>
+        <p class="footer-tagline">Lightweight skincare for Singapore's tropical climate. Formulated to glow in the heat, not disappear in it.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">All Products</a></li>
+          <li><a href="serum.html">Glow Essence Serum</a></li>
+          <li><a href="serum.html#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="#">Ingredients</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping (SG)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Lueur Co. All rights reserved.</p>
+      <p class="disclaimer">⚠ This website is created for educational purposes only (IT335C Social Media Analytics, Nanyang Polytechnic).</p>
+    </div>
+  </footer>
+
+</body>
+</html>
