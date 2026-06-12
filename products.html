@@ -139,13 +139,14 @@
 
   <div class="filter-bar">
     <span class="filter-label">Filter:</span>
-    <button class="filter-btn active">All</button>
-    <button class="filter-btn">Serums</button>
-    <button class="filter-btn">Moisturisers</button>
-    <button class="filter-btn">Cleansers</button>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="serums">Serums</button>
+    <button class="filter-btn" data-filter="moisturisers">Moisturisers</button>
+    <button class="filter-btn" data-filter="cleansers">Cleansers</button>
   </div>
 
   <section class="products-section">
+    <div class="filter-group" data-category="serums">
     <p class="category-label">Serums — Targeted treatments</p>
     <div class="products-grid">
       <a href="serum.html" class="product-card reveal">
@@ -160,22 +161,25 @@
           <div class="product-footer"><span class="product-price">SGD $48</span><a href="serum.html" class="product-link">View →</a></div>
         </div>
       </a>
-      <a href="serum.html" class="product-card reveal reveal-delay-1">
+      <a href="barrier-repair-serum.html" class="product-card reveal reveal-delay-1">
         <div class="product-img">
           <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&q=80&fit=crop" alt="Barrier Repair Serum" />
+          <span class="product-badge">New</span>
         </div>
         <div class="product-info">
           <p class="product-category">Serum</p>
           <h2 class="product-name">Barrier Repair Serum</h2>
           <p class="product-desc">Ceramide and Centella Asiatica serum that restores the skin barrier after sun exposure.</p>
-          <div class="product-footer"><span class="product-price">SGD $52</span><a href="serum.html" class="product-link">View →</a></div>
+          <div class="product-footer"><span class="product-price">SGD $52</span><a href="barrier-repair-serum.html" class="product-link">View →</a></div>
         </div>
       </a>
     </div>
+    </div>
 
+    <div class="filter-group" data-category="moisturisers">
     <p class="category-label">Moisturisers — Hydration without heaviness</p>
     <div class="products-grid">
-      <a href="serum.html" class="product-card reveal">
+      <a href="dew-veil-moisturiser.html" class="product-card reveal">
         <div class="product-img">
           <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&q=80&fit=crop" alt="Dew Veil Water-Gel Moisturiser" />
         </div>
@@ -183,10 +187,10 @@
           <p class="product-category">Moisturiser</p>
           <h2 class="product-name">Dew Veil Moisturiser</h2>
           <p class="product-desc">Water-gel with Hyaluronic Acid and Aloe Vera. Hydrates without leaving any greasy residue.</p>
-          <div class="product-footer"><span class="product-price">SGD $42</span><a href="serum.html" class="product-link">View →</a></div>
+          <div class="product-footer"><span class="product-price">SGD $42</span><a href="dew-veil-moisturiser.html" class="product-link">View →</a></div>
         </div>
       </a>
-      <a href="serum.html" class="product-card reveal reveal-delay-1">
+      <a href="calm-cloud-cream.html" class="product-card reveal reveal-delay-1">
         <div class="product-img">
           <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80&fit=crop" alt="Calm Cloud Cream for sensitive skin" />
           <span class="product-badge">New</span>
@@ -195,25 +199,28 @@
           <p class="product-category">Moisturiser</p>
           <h2 class="product-name">Calm Cloud Cream</h2>
           <p class="product-desc">Soothing, fragrance-free cream with Oat Extract and Panthenol to reduce redness and irritation.</p>
-          <div class="product-footer"><span class="product-price">SGD $46</span><a href="serum.html" class="product-link">View →</a></div>
+          <div class="product-footer"><span class="product-price">SGD $46</span><a href="calm-cloud-cream.html" class="product-link">View →</a></div>
         </div>
       </a>
     </div>
+    </div>
 
+    <div class="filter-group" data-category="cleansers">
     <p class="category-label">Cleansers — A clean start</p>
     <div class="products-grid">
-      <a href="serum.html" class="product-card reveal">
+      <a href="soft-reset-cleanser.html" class="product-card reveal">
         <div class="product-img">
           <img src="https://images.unsplash.com/photo-1601049676869-702ea24cfd58?w=600&q=80&fit=crop" alt="Soft Reset low pH gel cleanser" />
+          <span class="product-badge">Bestseller</span>
         </div>
         <div class="product-info">
           <p class="product-category">Cleanser</p>
           <h2 class="product-name">Soft Reset Cleanser</h2>
           <p class="product-desc">Low-pH gel cleanser that removes sweat, sunscreen and pollution without stripping the skin barrier.</p>
-          <div class="product-footer"><span class="product-price">SGD $36</span><a href="serum.html" class="product-link">View →</a></div>
+          <div class="product-footer"><span class="product-price">SGD $36</span><a href="soft-reset-cleanser.html" class="product-link">View →</a></div>
         </div>
       </a>
-      <a href="serum.html" class="product-card reveal reveal-delay-1">
+      <a href="micellar-melt-cleanser.html" class="product-card reveal reveal-delay-1">
         <div class="product-img">
           <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80&fit=crop" alt="Micellar Melt Oil Cleanser" />
         </div>
@@ -221,9 +228,10 @@
           <p class="product-category">Cleanser</p>
           <h2 class="product-name">Micellar Melt Oil Cleanser</h2>
           <p class="product-desc">First-step oil cleanser that dissolves SPF, makeup and sebum on contact. Rinses clean in heat.</p>
-          <div class="product-footer"><span class="product-price">SGD $38</span><a href="serum.html" class="product-link">View →</a></div>
+          <div class="product-footer"><span class="product-price">SGD $38</span><a href="micellar-melt-cleanser.html" class="product-link">View →</a></div>
         </div>
       </a>
+    </div>
     </div>
   </section>
 
@@ -306,6 +314,22 @@
     </div>
   </footer>
 
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.filter-group').forEach(group => {
+          if (filter === 'all' || group.dataset.category === filter) {
+            group.style.display = '';
+          } else {
+            group.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
   <script src="shared.js"></script>
 </body>
 </html>
