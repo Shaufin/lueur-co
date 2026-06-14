@@ -1,6 +1,7 @@
 // Page transition fade
 document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('page-loaded');
+  document.body.classList.remove('page-leaving');
 
   document.querySelectorAll('a').forEach(link => {
     const href = link.getAttribute('href');
@@ -24,4 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.12 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+});
+
+// Fix for browser back/forward (bfcache) leaving the page in a faded-out state
+window.addEventListener('pageshow', () => {
+  document.body.classList.remove('page-leaving');
+  document.body.classList.add('page-loaded');
 });
